@@ -53,7 +53,7 @@ pipeline {
                 sh 'docker version'
                 sh "docker build -t manjunathachar/regapp:${BUILD_NUMBER} ."
                 sh 'docker image list'
-                sh "docker tag manjunathachar/regapp:${BUILD_NUMBER} manjunathachar/insuranceapp:latest"
+                sh "docker tag manjunathachar/regapp:${BUILD_NUMBER} manjunathachar/regapp:latest"
             }
         }
 
