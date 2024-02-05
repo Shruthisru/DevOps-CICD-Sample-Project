@@ -7,6 +7,11 @@ pipeline {
         timestamps()
     }
 
+    parameters {
+  choice choices: ['dev', 'master', 'prod'], name: 'BranchName'
+}
+
+
     tools {
         maven "maven-3.9.6"
     }
@@ -36,7 +41,7 @@ pipeline {
 
         stage('Cloning the project or SCM checkout') {
             steps {
-                checkout scm
+                git credentialsId: 'github_credentials', url: 'https://github.com/manju65char/DevOps-CICD-Sample-Project.git'
             }
         }
 
